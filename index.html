@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>recipe-book-project</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,63 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Serge and Friends Recipe Book</h1>
+<p id="message">yo</p>
+    <div class ="top-intro">
+  <div class="unconfirmed">
+    <form id="sign-up" action="POST">
+      <input placeholder="Email" type="email" name="credentials[email]" />
+      <input placeholder="Desired Password" type="password" name="credentials[password]" />
+      <input placeholder="Confirm Password" type="password" name="credentials[password_confirmation]" />
+      <button type="submit" name="button">Sign up!</button>
+    </form>
+    <form id="sign-in" action="POST">
+      <input placeholder="Your Email" type="text" name="credentials[email]" />
+      <input placeholder="Your Password" type="password" name="credentials[password]" />
+      <button type="submit" name="button">Sign in!</button>
+    </form>
+  </div>
+  <div class="auth-sign-in">
+  <form id="sign-out" action='DELETE'>
+    <button type="button" name="button">Sign Out!</button>
+    <p>Hope to see you back soon!</p>
+  </form>
+  <form id="change-pw" action="PATCH">
+    <input placeholder="Old Password" type="password" name="passwords[old]"/>
+    <input placeholder="New Password" type="password" name="passwords[new]"/>
+    <button type="submit" name="button">Confirm Changes</button>
+  </form>
+</div>
+</div>
+<div class="auth-sign-in">
+  <form id="create-recipe" action="POST">
+    <input placeholder="Name" type="Name" name="recipe[name]"/>
+    <input placeholder="Category" type="Category" name="recipe[category]"/>
+    <input placeholder="Ingredients" type="Ingredients" name="recipe[ingredients]"/>
+    <input placeholder="Cuisine" type="Cuisine" name="recipe[cuisine]"/>
+    <button type="button" name="button">Create now!</button>
+    <p>Create a new recipe</p>
+  </form>
+  <form id="edit-recipe" action="POST">
+    <input placeholder="Recipe Token" type="Token" name="recipe[token]"/>
+    <input placeholder="New Name" type="Name" name="recipe[newname]"/>
+    <input placeholder="New Category" type="Category" name="recipe[newcategory]"/>
+    <input placeholder="New Ingredients" type="Ingredients" name="recipe[newingredients]"/>
+    <input placeholder="New Cuisine" type="Cuisine" name="recipe[newcuisine]"/>
+    <button type="button" name="button">Confirm edit!</button>
+    <p>Edit an existing recipe</p>
+  </form>
+  <form id="view-one-recipe" action="POST">
+    <input placeholder="Recipe Token" type="Token" name="recipe[token]"/>
+    <button type="button" name="button">Click here to view one recipe!</button>
+    <p>View an existing recipe using token</p>
+  </form>
+  <form id="get-recipes" action="GET">
+    <button type="button"
+      name="button">Click here to view all recipes</button>
+      <p>View all recipes</p>
+  </form>
+
+</div>
     </body>
 </html>
