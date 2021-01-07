@@ -20,4 +20,14 @@ $(() => {
   $('#change-pw').on('submit', authEvents.onChangePw)
   // set up the sign up
   $('#sign-out').on('click', authEvents.onSignOut)
+
+  // the start of the recipeEvents
+  // create a new recipe
+  $('#create-recipe').on('submit', recipeEvents.onCreateRecipe)
+  // edit a recipe
+  $('#edit-recipe').on('submit', recipeEvents.onEditRecipe)
+  // view one recipe
+  $('#view-one-recipe').on('submit', recipeEvents.onViewRecipe)
+  // view all recipes
+  $('#get-recipes').on('submit', recipeEvents.onGetRecipes)
 })
