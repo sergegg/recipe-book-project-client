@@ -2,8 +2,8 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://sergeys-recipe-book-project.herokuapp.com/',
-  development: 'http://localhost:4741'
+  production: 'https://sergeys-recipe-book-project.herokuapp.com',
+  development: 'https://sergeys-recipe-book-project.herokuapp.com'
 }
 
 if (window.location.hostname === 'localhost') {
