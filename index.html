@@ -43,23 +43,23 @@
 <div class="auth-sign-in">
   <form id="create-recipe" action="POST">
     <input placeholder="Name" type="Name" name="recipe[name]"/>
-    <input placeholder="Category" type="Category" name="recipe[category]"/>
-    <input placeholder="Ingredients" type="Ingredients" name="recipe[ingredients]"/>
+    <input placeholder="Breakfast Lunch Or Dinner" type="Category" name="recipe[category]"/>
+    <input placeholder="Ingredients" type="Ingredients" name="recipe[igredients]"/>
     <input placeholder="Cuisine" type="Cuisine" name="recipe[cuisine]"/>
     <button type="button" name="button">Create now!</button>
     <p>Create a new recipe</p>
   </form>
-  <form id="edit-recipe" action="POST">
-    <input placeholder="Recipe Token" type="Token" name="recipe[token]"/>
-    <input placeholder="New Name" type="Name" name="recipe[newname]"/>
-    <input placeholder="New Category" type="Category" name="recipe[newcategory]"/>
+  <form id="edit-recipe" action="PATCH">
+    <input placeholder="Recipe Token" type="Token" name="Token"/>
+    <input placeholder="New Name" type="Name" name="recipe[newName]"/>
+    <input placeholder="Breakfast Lunch Or Dinner" type="Category" name="recipe[newCategory]"/>
     <input placeholder="New Ingredients" type="Ingredients" name="recipe[newingredients]"/>
     <input placeholder="New Cuisine" type="Cuisine" name="recipe[newcuisine]"/>
     <button type="button" name="button">Confirm edit!</button>
     <p>Edit an existing recipe</p>
   </form>
-  <form id="view-one-recipe" action="POST">
-    <input placeholder="Recipe Token" type="Token" name="recipe[token]"/>
+  <form id="view-one-recipe" action="GET">
+    <input placeholder="Recipe Token" type="Token" name="token"/>
     <button type="button" name="button">Click here to view one recipe!</button>
     <p>View an existing recipe using token</p>
   </form>
