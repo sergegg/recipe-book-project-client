@@ -11,8 +11,9 @@ curl "https://sergeys-recipe-book-project.herokuapp.com/recipes/${ID}" \
       "name": "'"${NEWNAME}"'",
       "category": "'"${NEWCATEGORY}"'",
       "ingredients": "'"${NEWINGREDIENTS}"'",
-      "cuisine": "'"${NEWCUISINE}"'"
+      "cuisine": "'"${NEWCUISINE}"'",
+      "prepTime": "'"${NEWPREPTIME}"'"
     }
   }'
 
-echo
+ echo
