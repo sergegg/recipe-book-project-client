@@ -42,33 +42,33 @@
 </div>
 <div class="auth-sign-in">
   <form id="create-recipe" action="POST">
-    <input placeholder="Name" type="Name" name="recipe[name]"/>
-    <input placeholder="Breakfast Lunch Or Dinner" type="Category" name="recipe[category]"/>
-    <input placeholder="Ingredients" type="Ingredients" name="recipe[igredients]"/>
-    <input placeholder="Cuisine" type="Cuisine" name="recipe[cuisine]"/>
-    <button type="button" name="button">Create now!</button>
+    <input placeholder="Name" type="name" name="recipe[name]"/>
+    <input placeholder="Breakfast Lunch Or Dinner" type="category" name="recipe[category]"/>
+    <input placeholder="Ingredients" type="ingredients" name="recipe[ingredients]"/>
+    <input placeholder="Cuisine" type="cuisine" name="recipe[cuisine]"/>
+    <button type="submit" name="button">Create now!</button>
     <p>Create a new recipe</p>
   </form>
   <form id="edit-recipe" action="PATCH">
     <input placeholder="Recipe Token" type="Token" name="Token"/>
-    <input placeholder="New Name" type="Name" name="recipe[newName]"/>
-    <input placeholder="Breakfast Lunch Or Dinner" type="Category" name="recipe[newCategory]"/>
-    <input placeholder="New Ingredients" type="Ingredients" name="recipe[newingredients]"/>
-    <input placeholder="New Cuisine" type="Cuisine" name="recipe[newcuisine]"/>
-    <button type="button" name="button">Confirm edit!</button>
+    <input placeholder="New Name" type="name" name="recipe[newName]"/>
+    <input placeholder="Breakfast Lunch Or Dinner" type="category" name="recipe[newCategory]"/>
+    <input placeholder="New Ingredients" type="ingredients" name="recipe[newingredients]"/>
+    <input placeholder="New Cuisine" type="cuisine" name="recipe[newcuisine]"/>
+    <button type="submit" name="button">Confirm edit!</button>
     <p>Edit an existing recipe</p>
   </form>
   <form id="view-one-recipe" action="GET">
     <input placeholder="Recipe Token" type="Token" name="token"/>
-    <button type="button" name="button">Click here to view one recipe!</button>
+    <button type="submit" name="button">Click here to view one recipe!</button>
     <p>View an existing recipe using token</p>
   </form>
   <form id="get-recipes" action="GET">
-    <button type="button"
+    <button type="click"
       name="button">Click here to view all recipes</button>
       <!-- <p>View all recipes</p> -->
   </form>
-
+<p id=message2>  </p>
 </div>
     </body>
 </html>

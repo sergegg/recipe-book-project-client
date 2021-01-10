@@ -4,7 +4,7 @@ const store = require('./../store')
 
 const createRecipe = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/create',
+    url: config.apiUrl + '/recipes',
     method: 'POST',
     data,
     headers: {
@@ -14,7 +14,7 @@ const createRecipe = function (data) {
 }
 const editRecipe = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/update', // + store.recipe._id
+    url: config.apiUrl + '/recipes/' + store.recipe._id,
     method: 'PATCH',
     data,
     headers: {
@@ -25,7 +25,7 @@ const editRecipe = function (data) {
 
 const viewRecipe = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/show' + store.recipe._id,
+    url: config.apiUrl + '/recipes/' + store.recipe._id,
     method: 'GET',
     data,
     headers: {
@@ -36,7 +36,7 @@ const viewRecipe = function (data) {
 
 const index = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/index',
+    url: config.apiUrl + '/recipes',
     method: 'GET',
     data,
     headers: {

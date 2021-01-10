@@ -1,30 +1,29 @@
 'use strict'
 
 const store = require('./../store')
-// require the logic for the gameboard
-// const logic = require('./logic')
 
 const onError = function (error) {
-  $('#message').text('Failed to execute, please try again or fix the code. ', error)
+  $('#message2').text('Failed to execute, please try again or fix the code. ', error)
 }
 
-const onCreateRecipeSuccess = function (response) {
-  $('#message').text('yes')
-  store.recipe = response.recipe
-  console.log('are we even getting this? ', response)
+const onCreateRecipeSuccess = function (event) {
+  $('#message2').text('yes')
+  console.log('are we even getting this event? ', event)
+  store.recipe = event.recipe
+  console.log('are we even getting this store? ', store)
   $('form').trigger('reset')
 }
-const onEditRecipeSuccess = function (response) {
-  $('#message').text('yes')
-  store.recipe = response.recipe
+const onEditRecipeSuccess = function (event) {
+  $('#message2').text('yes')
+  store.recipe = event.recipe
   $('form').trigger('reset')
 }
-const onViewRecipeSuccess = function (response) {
-  $('#message').text('yes')
+const onViewRecipeSuccess = function (event) {
+  $('#message2').text('yes')
   $('form').trigger('reset')
 }
-const onGetRecipesSuccess = function (response) {
-  $('#message').text('yes')
+const onGetRecipesSuccess = function (event) {
+  $('#message2').text('yes')
 }
 module.exorts = {
   onError,
