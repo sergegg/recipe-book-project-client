@@ -6,10 +6,10 @@ const createRecipe = function (data) {
   return $.ajax({
     url: config.apiUrl + '/recipes',
     method: 'POST',
-    data,
     headers: {
       authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data
   })
 }
 const editRecipe = function (data) {
