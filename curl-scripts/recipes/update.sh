@@ -8,12 +8,12 @@ curl "https://sergeys-recipe-book-project.herokuapp.com/recipes/${ID}" \
   --data '{
     "recipe": {
       "_id": "'"${ID}"'",
-      "name": "'"${NEWNAME}"'",
-      "category": "'"${NEWCATEGORY}"'",
-      "ingredients": "'"${NEWINGREDIENTS}"'",
-      "cuisine": "'"${NEWCUISINE}"'",
-      "prepTime": "'"${NEWPREPTIME}"'"
+      "name": "'"${NAME}"'",
+      "category": "'"${CATEGORY}"'",
+      "ingredients": "'"${INGREDIENTS}"'",
+      "cuisine": "'"${CUISINE}"'",
+      "prepTime": "'"${PREPTIME}"'"
     }
   }'
 
- echo
+echo

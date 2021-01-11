@@ -9,28 +9,29 @@ const createRecipe = function (data) {
     headers: {
       authorization: 'Bearer ' + store.user.token
     },
-    data
+    data: data
   })
 }
 const editRecipe = function (data) {
+  console.log('what is data in edit in recipe api ', data)
   return $.ajax({
-    url: config.apiUrl + '/recipes/' + store.recipe._id,
+    url: config.apiUrl + '/recipes/' + data.recipe._id,
     method: 'PATCH',
-    data,
     headers: {
       authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: data
   })
 }
 
 const viewRecipe = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/recipes/' + store.recipe._id,
+    url: config.apiUrl + '/recipes/' + data.recipe._id,
     method: 'GET',
-    data,
     headers: {
       authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: data
   })
 }
 
@@ -38,10 +39,10 @@ const index = function (data) {
   return $.ajax({
     url: config.apiUrl + '/recipes',
     method: 'GET',
-    data,
     headers: {
       authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: data
   })
 }
 

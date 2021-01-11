@@ -2,7 +2,7 @@
 
 const api = require('./api')
 const ui = require('./ui')
-const store = require('./../store')
+// const store = require('./../store')
 
 const getFormFields = require('./../../../lib/get-form-fields')
 
@@ -11,7 +11,7 @@ const onCreateRecipe = function (event) {
   console.log('hello event ', event)
   // console.log('hello event.target ', event.target)
   const data = getFormFields(event.target)
-  console.log('Data in create Recipe', data)
+  // console.log('Data in create Recipe', data)
   // console.log('I wonder if objectId is real ', store.recipe._objectId)
   // console.log('what is store ', store.recipe)
   // console.log('what is onCreateRecipe', onCreateRecipe)
