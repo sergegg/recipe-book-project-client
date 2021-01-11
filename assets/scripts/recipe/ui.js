@@ -1,18 +1,15 @@
 'use strict'
 
-const store = require('./../store')
+// const store = require('./../store')
 
 const onError = function (error) {
   $('#message2').text('Failed to execute, please try again or fix the code. ', error)
 }
 
 const onCreateRecipeSuccess = function (event) {
-  $('#message').text('yes Create')
-  // console.log('are we even getting this event? ', event)
-  // console.log('are we even getting this store? ', store)
-  // console.log('is store.recipe a thing ', store.recipe)
-  // console.log('is event.recipe a thing ', event.recipe)
-  // store.recipe = event.recipe
+  $('#message').text('You have created your recipe successfully!')
+  $('#display-recipe').hide()
+  $('#display-recipe').show()
   const recipeHTML = `
   <h4>The recipe name is: ${event.recipe.name}</h4>
   <h6>This is the recipe ID: ${event.recipe._id}</h6>
@@ -22,17 +19,18 @@ const onCreateRecipeSuccess = function (event) {
   <h6>The prep time for this meal is: ${event.recipe.prepTime}</h6>
 `
   $('#display-recipe').html(recipeHTML)
-  // console.log('is event a thing AFTER', event)
   $('form').trigger('reset')
 }
 const onEditRecipeSuccess = function (event) {
   $('#message2').text('The edit was a success, view new recipe using the view recipe option')
+  $('#display-recipe').hide()
   $('form').trigger('reset')
 }
 
 const onViewRecipeSuccess = function (event) {
-  $('#message2').text('yes View 1')
-  console.log('are we even getting this event? ', event) // this works and this event shows the recipe
+  $('#message2').text('Here is the requested recipe')
+  $('#display-recipe').hide()
+  $('#display-recipe').show()
   const recipeHTML = `
   <h4>The recipe name is: ${event.recipe.name}</h4>
   <h6>This is the recipe ID: ${event.recipe._id}</h6>
@@ -46,8 +44,10 @@ const onViewRecipeSuccess = function (event) {
   $('form').trigger('reset')
 }
 const onGetRecipesSuccess = function (event) {
-  $('#message2').text('yes View All')
-  console.log('are we even getting this event? ', event) // this works and this shows an array of recipes
+  $('#message2').text('Below are all of the recipes')
+  // console.log('are we even getting this event? ', event) // this works and this shows an array of recipes
+  $('#display-recipe').hide()
+  $('#display-recipe').show()
   for (let i = 0; i < event.recipe.length; i++) {
     const recipeHTML = `
   <h4>The recipe name is: ${event.recipe[i].name}</h4>
@@ -63,8 +63,9 @@ const onGetRecipesSuccess = function (event) {
 }
 
 const onDeleteRecipeSuccess = function (event) {
-  $('#message2').text('yes, You Delete One')
+  $('#message2').text('You have deleted the requested recipe')
   $('form').trigger('reset')
+  $('#display-recipe').hide()
 }
 module.exports = {
   onError,

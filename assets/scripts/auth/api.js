@@ -24,7 +24,6 @@ const signIn = function (data) {
 }
 
 const changePw = function (data) {
-  console.log('data is: ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
