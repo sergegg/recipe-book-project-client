@@ -41,10 +41,18 @@ const onGetRecipes = function (event) {
     .then(ui.onGetRecipesSuccess)
     .catch(ui.onError)
 }
+const onDeleteRecipe = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.deleteOne(data)
+    .then(ui.onDeleteRecipeSuccess)
+    .catch(ui.onError)
+}
 
 module.exports = {
   onCreateRecipe,
   onEditRecipe,
   onViewRecipe,
-  onGetRecipes
+  onGetRecipes,
+  onDeleteRecipe
 }

@@ -30,4 +30,6 @@ $(() => {
   $('#view-one-recipe').on('submit', recipeEvents.onViewRecipe)
   // view all recipes
   $('#get-recipes').on('submit', recipeEvents.onGetRecipes)
+  // delete one recipe
+  $('#delete-one-recipe').on('submit', recipeEvents.onDeleteRecipe)
 })
