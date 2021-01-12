@@ -12,6 +12,7 @@ $(() => {
   // your JS code goes here
   $('.auth-sign-in').hide()
   $('.unconfirmed').show()
+  $('#after-sign-in').hide()
   // set up the sign up
   $('#sign-up').on('submit', authEvents.onSignUp)
   // set up the sign up

@@ -10,6 +10,8 @@ const onCreateRecipeSuccess = function (event) {
   $('#message').text('You have created your recipe successfully!')
   $('#display-recipe').hide()
   $('#display-recipe').show()
+  $('#display-recipe-template').hide()
+
   const recipeHTML = `
   <h4>The recipe name is: ${event.recipe.name}</h4>
   <h6>This is the recipe ID: ${event.recipe._id}</h6>
@@ -23,6 +25,7 @@ const onCreateRecipeSuccess = function (event) {
 }
 const onEditRecipeSuccess = function (event) {
   $('#message2').text('The edit was a success, view new recipe using the view recipe option')
+  $('#display-recipe-template').hide()
   $('#display-recipe').hide()
   $('form').trigger('reset')
 }
@@ -30,6 +33,7 @@ const onEditRecipeSuccess = function (event) {
 const onViewRecipeSuccess = function (event) {
   $('#message2').text('Here is the requested recipe')
   $('#display-recipe').hide()
+  $('#display-recipe-template').hide()
   $('#display-recipe').show()
   const recipeHTML = `
   <h4>The recipe name is: ${event.recipe.name}</h4>
@@ -47,6 +51,7 @@ const onGetRecipesSuccess = function (event) {
   $('#message2').text('Below are all of the recipes')
   // console.log('are we even getting this event? ', event) // this works and this shows an array of recipes
   $('#display-recipe').hide()
+  $('#display-recipe-template').hide()
   $('#display-recipe').show()
   for (let i = 0; i < event.recipe.length; i++) {
     const recipeHTML = `
@@ -65,6 +70,7 @@ const onGetRecipesSuccess = function (event) {
 const onDeleteRecipeSuccess = function (event) {
   $('#message2').text('You have deleted the requested recipe')
   $('form').trigger('reset')
+  $('#display-recipe-template').hide()
   $('#display-recipe').hide()
 }
 module.exports = {
