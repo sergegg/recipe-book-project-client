@@ -1,88 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>recipe-book-project</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>recipe-book-project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-    <div id="auth-header">
-      <h1>Serge and Friends Recipe Book</h1>
-<p id="message">Hello, please sign up using your first name, do not input real information</p>
-<p id="example-sign-up">Example Sign Up Email - serge@ye ( Do NOT use your real email or passwords )</p>
-<p id="if-signed-in">If you've already registered, enter information below, and click sign in</p>
-    <div class ="top-intro">
-  <div class="unconfirmed">
-    <form id="sign-up" action="POST">
-      <input placeholder="Email" type="email" name="credentials[email]" />
-      <input placeholder="Desired Password" type="password" name="credentials[password]" />
-      <input placeholder="Confirm Password" type="password" name="credentials[password_confirmation]" />
-      <button type="submit" name="button">Sign up!</button>
-    </form>
-    <form id="sign-in" action="POST">
-      <input placeholder="Your Email" type="text" name="credentials[email]" />
-      <input placeholder="Your Password" type="password" name="credentials[password]" />
-      <button type="submit" name="button">Sign in!</button>
-    </form>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div id="auth-header">
+    <h1>Serge and Friends Recipe Book</h1>
+    <p id="message">Hello, please sign up using your first name, do not input real information</p>
+    <p id="example-sign-up">Example Sign Up Email - serge@ye ( Do NOT use your real email or passwords )</p>
+    <p id="if-signed-in">If you've already registered, enter information below, and click sign in</p>
+    <div class="top-intro">
+      <div class="unconfirmed">
+        <form id="sign-up" action="POST">
+          <input placeholder="Email" type="email" name="credentials[email]" />
+          <input placeholder="Desired Password" type="password" name="credentials[password]" />
+          <input placeholder="Confirm Password" type="password" name="credentials[password_confirmation]" />
+          <button type="submit" name="button">Sign up!</button>
+        </form>
+        <form id="sign-in" action="POST">
+          <input placeholder="Your Email" type="text" name="credentials[email]" />
+          <input placeholder="Your Password" type="password" name="credentials[password]" />
+          <button type="submit" name="button">Sign in!</button>
+        </form>
+      </div>
+    </div>
+    <div id="after-sign-in">
+      <form id="sign-out" action='DELETE'>
+        <button type="button" name="button">Sign Out!</button>
+        <p>Sorry to see you leave. Hope to see you back soon!</p>
+      </form>
+      <form id="change-pw" action="PATCH">
+        <input placeholder="Old Password" type="password" name="passwords[old]" />
+        <input placeholder="New Password" type="password" name="passwords[new]" />
+        <button type="submit" name="button">Confirm Changes</button>
+        <p>Enter current password and new wanted password!</p>
+      </form>
+    </div>
   </div>
-</div>
-<div id="after-sign-in">
-<form id="sign-out" action='DELETE'>
-  <button type="button" name="button">Sign Out!</button>
-  <p>Sorry to see you leave. Hope to see you back soon!</p>
-</form>
-<form id="change-pw" action="PATCH">
-  <input placeholder="Old Password" type="password" name="passwords[old]"/>
-  <input placeholder="New Password" type="password" name="passwords[new]"/>
-  <button type="submit" name="button">Confirm Changes</button>
-  <p>Enter current password and new wanted password!</p>
-</form>
-</div>
-</div>
-<div class="auth-sign-in">
-  <form id="create-recipe">
-    <input placeholder="Name" type="text" name="recipe[name]"/>
-    <input placeholder="Category" type="text" name="recipe[category]"/>
-    <input placeholder="Ingredients" type="text" name="recipe[ingredients]"/>
-    <input placeholder="Cuisine" type="text" name="recipe[cuisine]"/>
-    <input placeholder="Prep Time" type="number" name="recipe[prepTime]"/>
-    <button type="submit" name="button">Create now!</button>
-    <p>Create a new recipe</p>
-  </form>
-  <form id="edit-recipe">
-    <input placeholder="Recipe Token" type="text" name="recipe[_id]"/>
-    <input placeholder="Name" type="text" name="recipe[name]"/>
-    <input placeholder="Category" type="text" name="recipe[category]"/>
-    <input placeholder="Ingredients" type="text" name="recipe[ingredients]"/>
-    <input placeholder="Cuisine" type="text" name="recipe[cuisine]"/>
-    <input placeholder="Prep Time" type="number" name="recipe[prepTime]"/>
-    <button type="submit" name="button">Confirm edit!</button>
-    <p>Edit an existing recipe</p>
-  </form>
-  <form id="view-one-recipe">
-    <input placeholder="Recipe Token" type="text" name="recipe[_id]"/>
-    <button type="submit" name="button">Click here to view one recipe!</button>
-    <p>View an existing recipe using token</p>
-  </form>
-  <form id="delete-one-recipe">
-    <input placeholder="Recipe Token" type="text" name="recipe[_id]"/>
-    <button type="submit" name="button">Click here to delete one recipe!</button>
-    <p>Delete a recipe using a token</p>
-  </form>
-  <form id="get-recipes">
-    <button type="click"
-      name="button">Click here to view all recipes</button>
+  <div class="auth-sign-in">
+    <form id="create-recipe">
+      <input placeholder="Name" type="text" name="recipe[name]" />
+      <input placeholder="Category" type="text" name="recipe[category]" />
+      <input placeholder="Ingredients" type="text" name="recipe[ingredients]" />
+      <input placeholder="Cuisine" type="text" name="recipe[cuisine]" />
+      <input placeholder="Prep Time" type="number" name="recipe[prepTime]" />
+      <button type="submit" name="button">Create now!</button>
+      <p>Create a new recipe</p>
+    </form>
+    <form id="edit-recipe">
+      <input placeholder="Recipe Token" type="text" name="recipe[_id]" />
+      <input placeholder="Name" type="text" name="recipe[name]" />
+      <input placeholder="Category" type="text" name="recipe[category]" />
+      <input placeholder="Ingredients" type="text" name="recipe[ingredients]" />
+      <input placeholder="Cuisine" type="text" name="recipe[cuisine]" />
+      <input placeholder="Prep Time" type="number" name="recipe[prepTime]" />
+      <button type="submit" name="button">Confirm edit!</button>
+      <p>Edit an existing recipe</p>
+    </form>
+    <form id="view-one-recipe">
+      <input placeholder="Recipe Token" type="text" name="recipe[_id]" />
+      <button type="submit" name="button">Click here to view one recipe!</button>
+      <p>View an existing recipe using token</p>
+    </form>
+    <form id="delete-one-recipe">
+      <input placeholder="Recipe Token" type="text" name="recipe[_id]" />
+      <button type="submit" name="button">Click here to delete one recipe!</button>
+      <p>Delete a recipe using a token</p>
+    </form>
+    <form id="get-recipes">
+      <button type="click" name="button">Click here to view all recipes</button>
       <!-- <p>View all recipes</p> -->
-  </form>
-<p id="message2"></p>
-<p id="display-recipe-template"></p>
-<p id="display-recipe"></p>
-</div>
-    </body>
+    </form>
+    <p id="message2"></p>
+    <p id="display-recipe-template"></p>
+    <p id="display-recipe"></p>
+  </div>
+</body>
+
 </html>
