@@ -13,7 +13,6 @@ const createRecipe = function (data) {
   })
 }
 const editRecipe = function (data) {
-  // console.log('what is data in edit in recipe api ', data)
   return $.ajax({
     url: config.apiUrl + '/recipes/' + data.recipe._id,
     method: 'PATCH',

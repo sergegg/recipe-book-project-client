@@ -2,7 +2,6 @@
 
 const api = require('./api')
 const ui = require('./ui')
-// const store = require('./../store')
 
 const getFormFields = require('./../../../lib/get-form-fields')
 
@@ -23,10 +22,15 @@ const onEditRecipe = function (event) {
 const onViewRecipe = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.viewRecipe(data)
-    .then(ui.onViewRecipeSuccess)
-    .catch(ui.onError)
+  if (data.recipe._id === '') {
+    $('#message2').text('Please enter a valid ID & try again...')
+  } else {
+    api.viewRecipe(data)
+      .then(ui.onViewRecipeSuccess)
+      .catch(ui.onError)
+  }
 }
+
 const onGetRecipes = function (event) {
   event.preventDefault()
   api.index()

@@ -18,7 +18,7 @@ const onCreateRecipeSuccess = function (event) {
   <h6>The category of food is:  ${event.recipe.category}</h6>
   <h6>The type of cuisine is: ${event.recipe.cuisine}</h6>
   <h6>The ingredients are: ${event.recipe.ingredients}</h6>
-  <h6>The prep time for this meal is: ${event.recipe.prepTime}</h6>
+  <h6>The prep time for this meal is: ${event.recipe.prepTime} Minutes</h6>
 `
   $('#display-recipe').html(recipeHTML)
   $('form').trigger('reset')
@@ -32,9 +32,8 @@ const onEditRecipeSuccess = function (event) {
 
 const onViewRecipeSuccess = function (event) {
   $('#message2').text('Here is the requested recipe')
-  $('#display-recipe').hide()
+  $('#display-recipe').text('')
   $('#display-recipe-template').hide()
-  $('#display-recipe').show()
   const recipeHTML = `
   <h4>The recipe name is: ${event.recipe.name}</h4>
   <h6>This is the recipe ID: ${event.recipe._id}</h6>
@@ -44,14 +43,15 @@ const onViewRecipeSuccess = function (event) {
   <h6>The ingredients are: ${event.recipe.ingredients}</h6>
   <h6>The prep time for this meal is: ${event.recipe.prepTime} Minutes</h6>
 `
+  $('#display-recipe').show()
   $('#display-recipe').html(recipeHTML)
   $('form').trigger('reset')
 }
+
 const onGetRecipesSuccess = function (event) {
   $('#message2').text('Below are all of the recipes')
-  // console.log('are we even getting this event? ', event) // this works and this shows an array of recipes
-  $('#display-recipe').hide()
   $('#display-recipe-template').hide()
+  $('#display-recipe').text('')
   $('#display-recipe').show()
   for (let i = 0; i < event.recipe.length; i++) {
     const recipeHTML = `
@@ -61,7 +61,7 @@ const onGetRecipesSuccess = function (event) {
   <h6>The category of food is:  ${event.recipe[i].category}</h6>
   <h6>The type of cuisine is: ${event.recipe[i].cuisine}</h6>
   <h6>The ingredients are: ${event.recipe[i].ingredients}</h6>
-  <h6>The prep time for this meal is: ${event.recipe[i].prepTime}</h6>
+  <h6>The prep time for this meal is: ${event.recipe[i].prepTime} Minutes</h6>
 `
     $('#display-recipe').append(recipeHTML)
   }
@@ -70,8 +70,8 @@ const onGetRecipesSuccess = function (event) {
 const onDeleteRecipeSuccess = function (event) {
   $('#message2').text('You have deleted the requested recipe')
   $('form').trigger('reset')
-  $('#display-recipe-template').hide()
-  $('#display-recipe').hide()
+  $('#display-recipe-template').text('')
+  $('#display-recipe').text('')
 }
 module.exports = {
   onError,
