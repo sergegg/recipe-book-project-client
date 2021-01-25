@@ -39,6 +39,10 @@ The following is the link to my wireframe
 [imgur](https://imgur.com/D87P10W)
 
 The following is the link to my ERD
-[imgur]()
+[imgur](https://imgur.com/a/xnWc8lq)
+
 ## Unsolved Problems
-I am yet to create functionality to add pictures to recipes. I also am lacking functionality to sort by the 4 possible categories. And I do not have the preperation instructions to make a meal. Also when displaying all recipes the system displays one recipe twice.
+I am yet to create functionality to add pictures to recipes. I also am lacking functionality to sort by the 4 possible categories. And I do not have the preperation instructions to make a meal.
+
+## Link to Backend Repo
+[Backend Repo](https://github.com/sergegg/recipe-book-project)
